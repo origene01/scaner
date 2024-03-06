@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Icon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="img/WhatsApp_Image_2024-02-28_at_2.03.01_PM-removebg-preview.png" alt="LogoHisarts">
+        </div>
+        <div class="menu">
+            <a href="#"><img src="img/Perfil.png" alt=""></a>
+        </div>
+    </div>
+    <div class="container" id="containercamera">
+        <div id="cameraSection">
+            <h2>Encuentra tu Obra</h2>
+
+        </div>
+        <div id="cameraPosition">
+            <div id="cameraIcon" class="camera-icon" >
+                <img src="img/Camara.png" alt="Camera Icon"id="cameraButton">
+            </div>
+
+            <h3>Tu vida es más sencilla con una cámara</h3>
+            <br>
+            <p>Muéstrame una obra :)</p>
+        </div>
+        <br><br>
+        <video id="videoElement" autoplay></video>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cameraIcon = document.getElementById('cameraIcon');
+            const videoElement = document.getElementById('videoElement');
+
+            cameraIcon.addEventListener('click', function () {
+                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                    navigator.mediaDevices.getUserMedia({
+                            video: true
+                        })
+                        .then(function (stream) {
+                            videoElement.srcObject = stream;
+                            videoElement.play();
+                        })
+                        .catch(function (error) {
+                            console.error('Error acceder a camara', error);
+                        });
+                } else {
+                    console.error('VIdeo no soporta');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cameraButton = document.getElementById('cameraButton');
+
+            cameraButton.addEventListener('click', function () {
+                // Simular un retraso de 3 segundos
+                setTimeout(function () {
+                    // Redireccionar a otra página HTML
+                    window.location.href = 'Home/registrado.html';
+                }, 8000); // 3000 milisegundos = 3 segundos
+            });
+        });
+    </script>
+</body>
+
+</html>

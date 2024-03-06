@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+  }
+
+  .navbar {
+    background-color: #cecece;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo img {
+    max-width: 100px;
+  }
+
+  /* Parte del home (registrado) */
+  .menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .menu img {
+    width: 30px;
+  }
+  /* -----------------------------*/
+  
+  .menu .registro{
+    display: block;
+    text-decoration: none;
+    padding: 10px 10px;
+    color: #ffffff;
+    background-color: #4d4d4d;
+    border-radius: 10px;
+  }
+
+  /* Media queries para dispositivos móviles */
+  @media only screen and (max-width: 600px) {
+    .navbar {
+      align-items: center;
+    }
+
+    .menu {
+      margin-top: 10px;
+    }
+  }
+
+/* Esto acá son los estilos de las publicaciones en la página de Inicio de HisArts */
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .post-header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .username {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .post-content {
+    padding: 10px;
+  }
+
+  .post-image{
+    width: 100%;
+  }
+  .post-image img{
+    width: 100%;
+  }
+
+  .post-description {
+    margin-bottom: 10px;
+  }
+
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+
+  .post-actions .comentarios{
+    width: 8%;
+  }
+
+  .action-icons {
+    display: flex;
+    gap: 30px;
+  }
+
+  .action-icons img {
+    width: 7%;
+  }
+
+  .action-icons img:hover {
+    color: #333;
+  }
+
+  /*------------- Camara -------------- */
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cameraSection {
+    margin-bottom: 20px;
+}
+
+#cameraSection h2{
+  font-size: 18px;
+}
+
+.camera-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+
+
+.camera-icon img {
+    width: 100%;
+    height: auto;
+}
+
+#cameraPosition {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1em;
+}
+
+#containercamera{
+  display: flex;
+  height: 500px;
+  color: #fafafa;
+  justify-content: center;
+  align-items: center;
+  background-color: #a39e9e;
+}
+
+#cameraPosition h3 {
+    margin-bottom: 5px;
+}
+
+#videoElement {
+    display: block; /* Para ocultar el video por defecto "None" */
+    width: 70%;
+    border-radius: 1em;
+    box-shadow: 5px 3px 40px;
+
+}
+
+/* Camara. Media queries para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .camera-icon {
+      width: 30px;
+      height: 30px;
+  }
+
+  #cameraPosition {
+      font-size: 14px;
+      width: 60%;
+  }
+}
+
+
+
