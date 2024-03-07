@@ -39,38 +39,39 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
-            const cameraIcon = document.getElementById('cameraIcon');
-            const videoElement = document.getElementById('videoElement');
+    const cameraIcon = document.getElementById('cameraIcon');
+    const videoElement = document.getElementById('videoElement');
 
-            cameraIcon.addEventListener('click', function () {
-                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia({
-                            video: true
-                        })
-                        .then(function (stream) {
-                            videoElement.srcObject = stream;
-                            videoElement.play();
-                        })
-                        .catch(function (error) {
-                            console.error('Error acceder a camara', error);
-                        });
-                } else {
-                    console.error('VIdeo no soporta');
+    cameraIcon.addEventListener('click', function () {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: 'environment' // Acceder a la cámara trasera
                 }
+            })
+            .then(function (stream) {
+                videoElement.srcObject = stream;
+                videoElement.play();
+            })
+            .catch(function (error) {
+                console.error('Error acceder a la cámara:', error);
             });
-        });
+        } else {
+            console.error('El navegador no soporta getUserMedia');
+        }
+    });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const cameraButton = document.getElementById('cameraButton');
+    const cameraButton = document.getElementById('cameraButton');
 
-            cameraButton.addEventListener('click', function () {
-                // Simular un retraso de 3 segundos
-                setTimeout(function () {
-                    // Redireccionar a otra página HTML
-                    window.location.href = 'Home/registrado.html';
-                }, 8000); // 3000 milisegundos = 3 segundos
-            });
-        });
+    cameraButton.addEventListener('click', function () {
+        // Simular un retraso de 8 segundos
+        setTimeout(function () {
+            // Redireccionar a otra página HTML
+            window.location.href = 'Home/registrado.html';
+        }, 8000); // 8000 milisegundos = 8 segundos
+    });
+});
+
 
     </script>
 </body>
