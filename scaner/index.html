@@ -37,27 +37,7 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const cameraIcon = document.getElementById('cameraIcon');
-            const videoElement = document.getElementById('videoElement');
-
-            cameraIcon.addEventListener('click', function () {
-                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia({
-                            video: true
-                        })
-                        .then(function (stream) {
-                            videoElement.srcObject = stream;
-                            videoElement.play();
-                        })
-                        .catch(function (error) {
-                            console.error('Error acceder a camara', error);
-                        });
-                } else {
-                    console.error('VIdeo no soporta');
-                }
-            });
-        });
+        
 
         document.addEventListener('DOMContentLoaded', function () {
     const cameraButton = document.getElementById('cameraButton');
