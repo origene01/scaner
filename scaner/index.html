@@ -60,16 +60,29 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-            const cameraButton = document.getElementById('cameraButton');
+    const cameraButton = document.getElementById('cameraButton');
 
-            cameraButton.addEventListener('click', function () {
-                // Simular un retraso de 3 segundos
-                setTimeout(function () {
+    cameraButton.addEventListener('click', function () {
+        const constraints = {
+            video: {
+                facingMode: 'environment' // Acceder a la cámara trasera
+            }
+        };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then(function (stream) {
+                // Simular un retraso de 9 segundos
+                setTimeout(function() {
                     // Redireccionar a otra página HTML
                     window.location.href = 'Home/registrado.html';
-                }, 8000); // 3000 milisegundos = 3 segundos
+                }, 9000); // 9000 milisegundos = 9 segundos
+            })
+            .catch(function (error) {
+                console.error('Error acceso de camara', error);
             });
-        });
+    });
+});
+
     </script>
 </body>
 
